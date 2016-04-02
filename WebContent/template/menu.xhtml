@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition>
+
+	<h:form>
+    <p:growl autoUpdate="true"/>
+ 
+    <p:panelMenu style="width:200px">
+        
+        <p:submenu label="CADASTRAR">
+            <p:menuitem value="Candidato" url="../UrnaEletronica/cadastroCandidato.xhtml" icon="ui-icon-user"/>
+            
+            <p:menuitem value="Eleitor" url="../UrnaEletronica/cadastroEleitor.xhtml"   icon="ui-icon-user-2" />
+        </p:submenu>
+        
+     </p:panelMenu>
+     
+     <p:button style="width:200px" outcome="index" value="VOTAR">
+	   <f:param name="StringPassaráComoParâmetro" value="10" />
+	 </p:button>
+     
+     <p:panelMenu style="width:200px">   
+        <p:submenu label="APURAR RESULTADOS" >
+        	
+        	<p:menuitem value="Votos de cada candidato" actionListener="#{menuView.save}" icon="ui-icon-extlink"/>
+            <p:menuitem value="Votos brancos" actionListener="#{menuView.save}" icon="ui-icon-extlink"/>
+            <p:menuitem value="Votos nulos" actionListener="#{menuView.save}" icon="ui-icon-extlink"/>
+            <p:menuitem value="Candidato mais votado" actionListener="#{menuView.save}" icon="ui-icon-extlink"/>
+            <p:menuitem value="Candidato menos votado" actionListener="#{menuView.save}" icon="ui-icon-extlink"/>
+            <p:menuitem value="Candidato eleito" actionListener="#{menuView.save}" icon="ui-icon-extlink"/>
+            <p:menuitem value="Segundo Turno" actionListener="#{menuView.save}" icon="ui-icon-extlink"/>
+            <p:menuitem value="Eleitores que compareceram" actionListener="#{menuView.save}" icon="ui-icon-extlink"/>
+            
+            
+        </p:submenu>
+    </p:panelMenu>
+</h:form>
+
+</ui:composition>
+</html>
