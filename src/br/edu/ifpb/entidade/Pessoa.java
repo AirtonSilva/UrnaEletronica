@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_pessoa")
 @NamedQuery(name = "Pessoa.getAll", query = "from Pessoa")
-public class Pessoa {
+public class Pessoa{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,13 +32,47 @@ public class Pessoa {
 	
 	@Column(name = "tit_pessoa")
 	private int titulo;
+	
+	@Column(name = "partido_candidato")
+	private String partido;
+	
+	@Column(name = "num_candidato")
+	private int numero;
+	
+	@Column(name = "categoria_candidato")
+	private String categoria;
 
-	public int getTitulo() {
-		return titulo;
+	
+	public String getPartido() {
+		return partido;
 	}
 
+	public void setPartido(String partido) {
+		this.partido = partido;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+	
 	public void setTitulo(int titulo) {
 		this.titulo = titulo;
+	}
+	
+	public int getTitulo(){
+		return titulo;
 	}
 
 	public int getRg() {
@@ -80,4 +114,5 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 }

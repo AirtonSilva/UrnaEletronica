@@ -27,12 +27,51 @@
 	margin-left:18%;
 	width: 82%;
 	height:540px;
-	border: 1px solid #000;
-	background: URL(../images/urna_eletronica.png) no-repeat;	
+	border: 1px solid #000;	
 }
 
-.redimensionar{
-	margin-top:1%;
-	margin-left:2%;
-	width:90%;	
+#botoesUrna{
+	color: #111111;
+	margin-left:62%;
+	margin-top:19%;
+	width:282px;
+	height:297px;
+}
+
+.branco{
+	margin-left:16px;
+	height:36px;
+	width:66px;
+	font-size:12px !important;
+	font-style:bold;
+	position:center;
+}
+
+.corrige{
+	margin-left:20px;
+	font-family:Times;
+	background-color: #ff8000;
+	height:36px;
+	width:66px;
+	font-size:11px !important;
+	position:center;
+}
+
+.confirma{
+	margin-left:19px;
+	margin-top:1px;
+	height:41px;
+	width:66px;
+	font-size:10px !important;
+	position:center;
+}
+
+#telaUrna{
+	font-family:Arial;
+	color:#ffffff;
+	margin-left:9%;
+	margin-top:-322px;
+	height:280px;
+	width:475px;
+	background-color: #005329;
 }

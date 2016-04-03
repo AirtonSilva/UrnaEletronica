@@ -1,9 +1,10 @@
 package br.edu.ifpb.entidade;
 
 import javax.persistence.Column;
+import br.edu.ifpb.entidade.Pessoa;
 
 public class Candidato extends Pessoa{
-	
+
 	@Column(name = "partido_candidato")
 	private String partido;
 	

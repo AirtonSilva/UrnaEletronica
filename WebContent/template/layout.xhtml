@@ -4,20 +4,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      >
+      xmlns:ui="http://java.sun.com/jsf/facelets" >
 
     <h:head>
 				
     	<h:outputStylesheet name="estilo.css" library="css" />
+    	
     	<title>
     		<ui:insert name="title" >
-			  Cadastrar
+			  Cadastro
 			</ui:insert>
     	</title>
     	
     	<link rel="shortcut icon" type="image/x-icon" href="icon_UE.png" ></link>
-		
 		
     </h:head>
     
@@ -41,7 +40,21 @@
 	  	<ui:insert name="content" >
 	 	  <ui:include src="/template/conteúdo.xhtml" />
 	   	</ui:insert>
+	   	
+	   	<div id="botoesUrna">
+	  	<ui:insert name="botoesUrna" >
+	 	  <ui:include src="/template/botoesUrna.xhtml" />
+	   	</ui:insert>
 	    </div>
+	    
+	    <div id="telaUrna">
+	  	<ui:insert name="telaUrna" >
+	 	  <ui:include src="/template/telaUrna.xhtml" />
+	   	</ui:insert>
+	    </div>
+	    
+	    </div>
+	    
 	</div>
 	
 	</h:body>

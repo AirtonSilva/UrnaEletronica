@@ -5,16 +5,24 @@
  	  xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       >
-    <h:body>
+      <h:head>
+				
+    	<h:outputStylesheet name="estilo.css" library="css" />
     	
-    	NÃO ESCREVER NADA AQUI FORA
-    	http://www.justicaeleitoral.jus.br/
-		
-	    <ui:composition>
-	    	<h:graphicImage><IMG class='redimensionar' SRC='resources\images\urna_eletronica.png' /></h:graphicImage>
-						
-	    </ui:composition>
-	    
-	    A URNA NÃO APARECEU DE JEITO NENHUM COMO PLANO DE FUNDO (BACKGROUND-IMAGE) NO CSS...
-    </h:body>
+    	<title>
+    		<ui:insert name="title" >
+			  Layout
+			</ui:insert>
+    	</title>
+    	
+    	<style type="text/css">
+    		#content {
+    			background-image: url("../UrnaEletronica/resources/images/urna_eletronica.png");
+    			background-size: 94%;
+    			background-repeat: no-repeat;
+    		}
+		</style>
+ 
+     </h:head>
+
 </html>

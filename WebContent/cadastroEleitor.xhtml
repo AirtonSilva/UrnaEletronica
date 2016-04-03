@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+      
+    <h:head>
+		<title>
+    		<ui:insert name="title" >
+			  Cadastro de Eleitor
+			</ui:insert>
+    	</title>
+    </h:head>  
+      
+    <h:body>
+    	
+    	<ui:composition template="/template/layout.xhtml">
+    	
+    		<ui:define name="content">
+    			Prezado ELEITOR, favor preencher todos os campos abaixo.
+    			
+    			<h:form>
+				    
+				    <p:panel id="panel" header="Novo ELEITOR">
+				 	<h:panelGrid columns="2" columnClasses="label, value">
+
+				            <h:outputText value="DADOS PESSOAIS" />
+				            <br></br>				
+				            <h:outputText value="Nome:" />
+				            <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" />
+				            
+				 		    <h:outputText for="endereco" value="Endereço:" />
+				            <p:inputText id="endereco" value="#{pessoaBean.pessoa.endereco}" required="true" label="Endereço" />
+				            
+					        <h:outputText for="cpf" value="CPF: " />
+					        <p:inputMask id="cpf" value="#{pessoaBean.pessoa.cpf}" mask="999.999.999-99" />
+					   
+				            <h:outputText for="rg" value="Identidade:" />
+				            <p:inputText id="rg" value="#{pessoaBean.pessoa.rg}" required="true" label="Identidade" />
+				    
+				        	<h:outputText value="Título Eleitoral: " />
+					        <p:inputMask id="titulo" value="#{pessoaBean.pessoa.titulo}" mask="9999 9999 9999"/>
+					        		
+						<p:dialog widgetVar="dlg" modal="true" resizable="false" header="Eleitor cadastrado com sucesso!" showEffect="fade">
+					    </p:dialog>
+					  <p:commandButton value="CADASTRAR ELEITOR" />
+				</h:panelGrid>
+            	</p:panel>
+    			
+    			</h:form>
+    			
+    			<a href="../UrnaEletronica/index.xhtml" target='_self'>
+				Voltar</a>
+       		</ui:define>
+    		 
+    	</ui:composition>
+    		   	
+    </h:body>
+
+</html>
