@@ -32,6 +32,7 @@
 		<property name="connection.pool_size">20</property>
 		
 		<!-- Entidades -->
+		<mapping class="br.edu.ifpb.entidade.Pessoa" />
 		<mapping class="br.edu.ifpb.entidade.Candidato" />				
 
 	</session-factory>

@@ -14,6 +14,7 @@
     	</title>
     </h:head>  
       
+      
     <h:body>
     	
     	<ui:composition template="/template/layout.xhtml">
@@ -52,17 +53,15 @@
 		                    <h:outputText value="Número: " />
 		                    <p:inputMask id="numero" value="#{pessoaBean.candidato.numero}" mask="99"/>
 		 
-							
 						<p:dialog widgetVar="dlg" modal="true" resizable="false" header="Cadastrado com sucesso!" showEffect="fade">
 					    </p:dialog>
-					  <p:commandButton value="CADASTRAR CANDIDATO" action="${pessoaBean.cadastrarCandidato}" />
+					  <p:commandButton value="CADASTRAR CANDIDATO" action="${pessoaBean.cadastrarcandidato}" />
 				</h:panelGrid>
             	</p:panel>
     			
     			</h:form>
     			
-    			<a href="../UrnaEletronica/index.xhtml" target='_self'>
-				Voltar</a>
+    			<a href="../UrnaEletronica/index.xhtml" target='_self'>Voltar</a>
        		</ui:define>
     		
     	</ui:composition>

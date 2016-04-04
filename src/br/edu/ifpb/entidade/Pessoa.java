@@ -1,16 +1,22 @@
 package br.edu.ifpb.entidade;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_pessoa")
 @NamedQuery(name = "Pessoa.getAll", query = "from Pessoa")
+@Inheritance(strategy = InheritanceType.JOINED)   //Essa notação se refere à classe Pai, Pessoa
+@DiscriminatorColumn(name = "tp_pessoa", discriminatorType = DiscriminatorType.INTEGER)
 public class Pessoa {
 
 	@Id
@@ -32,27 +38,6 @@ public class Pessoa {
 	
 	@Column(name = "tt_candidato")
 	private String titulo;
-	
-	@Column(name = "ptd_candidato")
-	private String partido;
-	
-	@Column(name = "num_candidato")
-	private String numero;
-		
-	@Column(name = "ctg_candidato")
-	private String categoria;
-
-	
-	public Pessoa() {		
-		this.nome = "";
-		this.endereco = " ";
-		this.cpf = "";
-		this.rg = " ";
-		this.titulo = " ";
-		this.partido = " ";
-		this.numero = " ";
-		this.categoria = " ";
-	}
 	
 	public String getNome() {
 		return nome;
@@ -93,29 +78,4 @@ public class Pessoa {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
-	public String getPartido() {
-		return partido;
-	}
-
-	public void setPartido(String partido) {
-		this.partido = partido;
-	}
-
-	public String getNumero() {
-		return numero;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-
 }
