@@ -11,84 +11,55 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_pessoa")
 @NamedQuery(name = "Pessoa.getAll", query = "from Pessoa")
-public class Pessoa{
-	
+public class Pessoa {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_pessoa")
+	@Column(name = "id_candidato")
 	private int id;
 	
-	@Column(name = "nm_pessoa")
+	@Column(name = "nm_candidato")
 	private String nome;
-	
-	@Column(name = "end_pessoa")
+
+	@Column(name = "end_candidato")
 	private String endereco;
 	
-	@Column(name = "cpf_pessoa")
-	private int cpf;
+	@Column(name = "cpf_candidato")
+	private String cpf;
+		
+	@Column(name = "rg_candidato")
+	private String rg;
 	
-	@Column(name = "rg_pessoa")
-	private int rg;
+	@Column(name = "tt_candidato")
+	private String titulo;
 	
-	@Column(name = "tit_pessoa")
-	private int titulo;
-	
-	@Column(name = "partido_candidato")
+	@Column(name = "ptd_candidato")
 	private String partido;
 	
 	@Column(name = "num_candidato")
-	private int numero;
-	
-	@Column(name = "categoria_candidato")
+	private String numero;
+		
+	@Column(name = "ctg_candidato")
 	private String categoria;
 
 	
-	public String getPartido() {
-		return partido;
-	}
-
-	public void setPartido(String partido) {
-		this.partido = partido;
-	}
-
-	public int getNumero() {
-		return numero;
-	}
-
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public Pessoa() {		
+		this.nome = "";
+		this.endereco = " ";
+		this.cpf = "";
+		this.rg = " ";
+		this.titulo = " ";
+		this.partido = " ";
+		this.numero = " ";
+		this.categoria = " ";
 	}
 	
-	public void setTitulo(int titulo) {
-		this.titulo = titulo;
-	}
-	
-	public int getTitulo(){
-		return titulo;
+	public String getNome() {
+		return nome;
 	}
 
-	public int getRg() {
-		return rg;
-	}
-
-	public void setRg(int rg) {
-		this.rg = rg;
-	}
-
-	public int getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(int cpf) {
-		this.cpf = cpf;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getEndereco() {
@@ -99,20 +70,52 @@ public class Pessoa{
 		this.endereco = endereco;
 	}
 
-	public int getId() {
-		return id;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getRg() {
+		return rg;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getPartido() {
+		return partido;
+	}
+
+	public void setPartido(String partido) {
+		this.partido = partido;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 }

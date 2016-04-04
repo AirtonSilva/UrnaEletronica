@@ -31,4 +31,10 @@
 		<param-value>flick</param-value>  
 	</context-param>
   
+  	<listener>
+		<listener-class>
+    		br.edu.ifpb.hibernate.HibernateListener
+		</listener-class>
+	</listener>
+  
 </web-app>
