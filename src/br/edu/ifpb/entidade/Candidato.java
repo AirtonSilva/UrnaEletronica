@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Candidato extends Pessoa {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_aluno")
+	@Column(name = "id_candidato")
 	private Integer id;
 	
 	@Column(name = "ptd_candidato")

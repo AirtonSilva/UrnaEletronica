@@ -1,35 +1,58 @@
 package br.edu.ifpb.bean;
 
+import java.sql.SQLException;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+import br.edu.ifpb.dao.CandidatoDAO;
+import br.edu.ifpb.dao.EleitorDAO;
 import br.edu.ifpb.entidade.Candidato;
+import br.edu.ifpb.entidade.Eleitor;
 
 @RequestScoped
 @ManagedBean
 public class PessoaBean{
 	
 	private Candidato candidato = new Candidato();
-	
+	private Eleitor eleitor = new Eleitor();
+		
+	public Eleitor getEleitor() {
+		return eleitor;
+	}
+
+	public void setEleitor(Eleitor eleitor) {
+		this.eleitor = eleitor;
+	}
+
 	public Candidato getCandidato() {
 		return candidato;
 	}
 	
-
 	public void setCandidato(Candidato candidato) {
 		this.candidato = candidato;
 	}
-	public String cadastrarcandidato(){
-		System.out.println(candidato.getNome());
-		System.out.println(candidato.getEndereco());
-		System.out.println(candidato.getCpf());
-		System.out.println(candidato.getRg());
-		System.out.println(candidato.getTitulo());
-		System.out.println(candidato.getPartido());
-		System.out.println(candidato.getNumero());
-		System.out.println(candidato.getCategoria());
+	
+	public Candidato cadastrarcandidato() throws SQLException {
 		
-		return this.cadastrarcandidato();
+		CandidatoDAO.getInstance().insert(candidato);
+		
+		return candidato;
+				
+	}
+	
+	public Eleitor cadastrareleitor() throws SQLException {
+		
+		System.out.println(eleitor.getNome());
+		System.out.println(eleitor.getEndereco());
+		System.out.println(eleitor.getCpf());
+		System.out.println(eleitor.getRg());
+		System.out.println(eleitor.getTitulo());
+		
+		EleitorDAO.getInstance().insert(eleitor);
+		
+		return eleitor;
+				
 	}
 
 }

@@ -6,12 +6,10 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
-      >
-      
-    <h:head>
+      ><h:head>
 		<title>
     		<ui:insert name="title" >
-			  Cadastro de Eleitor
+			  Cadastrar Candidato
 			</ui:insert>
     	</title>
     </h:head>  
@@ -25,29 +23,31 @@
     			
     			<h:form>
 				    
-				    <p:panel id="panel" header="Novo ELEITOR">
+				    <p:panel id="panel" header="Novo Eleitor">
 				 	<h:panelGrid columns="2" columnClasses="label, value">
 
 				            <h:outputText value="DADOS PESSOAIS" />
 				            <br></br>				
 				            <h:outputText value="Nome:" />
-				            <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" />
+				            <p:inputText id="nome" value="${pessoaBean.eleitor.nome}" required="true" label="Nome" />
 				            
 				 		    <h:outputText for="endereco" value="Endereço:" />
-				            <p:inputText id="endereco" value="#{pessoaBean.pessoa.endereco}" required="true" label="Endereço" />
+				            <p:inputText id="endereco" value="#{pessoaBean.eleitor.endereco}" required="true" label="Endereço" />
 				            
 					        <h:outputText for="cpf" value="CPF: " />
-					        <p:inputMask id="cpf" value="#{pessoaBean.pessoa.cpf}" mask="999.999.999-99" />
+					        <p:inputText id="cpf" value="#{pessoaBean.eleitor.cpf}" />
 					   
 				            <h:outputText for="rg" value="Identidade:" />
-				            <p:inputText id="rg" value="#{pessoaBean.pessoa.rg}" required="true" label="Identidade" />
+				            <p:inputText id="rg" value="#{pessoaBean.eleitor.rg}" required="true" label="Identidade" />
 				    
 				        	<h:outputText value="Título Eleitoral: " />
-					        <p:inputMask id="titulo" value="#{pessoaBean.pessoa.titulo}" mask="9999 9999 9999"/>
-					        		
-						<p:dialog widgetVar="dlg" modal="true" resizable="false" header="Eleitor cadastrado com sucesso!" showEffect="fade">
+					        <p:inputText id="titulo" value="#{pessoaBean.eleitor.titulo}" />
+					        
+					        <br></br><br></br>			
+		 
+						<p:dialog widgetVar="dlg" modal="true" resizable="false" header="Cadastrado com sucesso!" showEffect="fade">
 					    </p:dialog>
-					  <p:commandButton value="CADASTRAR ELEITOR" />
+					  <p:commandButton value="CADASTRAR ELEITOR" action="${pessoaBean.cadastrareleitor}" />
 				</h:panelGrid>
             	</p:panel>
     			

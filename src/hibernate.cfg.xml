@@ -33,7 +33,8 @@
 		
 		<!-- Entidades -->
 		<mapping class="br.edu.ifpb.entidade.Pessoa" />
-		<mapping class="br.edu.ifpb.entidade.Candidato" />				
+		<mapping class="br.edu.ifpb.entidade.Candidato" />	
+		<mapping class="br.edu.ifpb.entidade.Eleitor" />				
 
 	</session-factory>
 </hibernate-configuration>

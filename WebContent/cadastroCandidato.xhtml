@@ -52,6 +52,9 @@
 		 
 		                    <h:outputText value="Número: " />
 		                    <p:inputMask id="numero" value="#{pessoaBean.candidato.numero}" mask="99"/>
+
+					        <h:outputText value="Categoria: " />
+		                    <p:inputText value="#{pessoaBean.candidato.categoria}" required="true" label="categoria"/>
 		 
 						<p:dialog widgetVar="dlg" modal="true" resizable="false" header="Cadastrado com sucesso!" showEffect="fade">
 					    </p:dialog>
