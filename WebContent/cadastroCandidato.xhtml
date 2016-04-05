@@ -14,7 +14,6 @@
     	</title>
     </h:head>  
       
-      
     <h:body>
     	
     	<ui:composition template="/template/layout.xhtml">
@@ -36,29 +35,28 @@
 				            <p:inputText id="endereco" value="#{pessoaBean.candidato.endereco}" required="true" label="Endereço" />
 				            
 					        <h:outputText for="cpf" value="CPF: " />
-					        <p:inputText id="cpf" value="#{pessoaBean.candidato.cpf}" />
+					        <p:inputText id="cpf" value="#{pessoaBean.candidato.cpf}" label="CPF"/>
 					   
 				            <h:outputText for="rg" value="Identidade:" />
 				            <p:inputText id="rg" value="#{pessoaBean.candidato.rg}" required="true" label="Identidade" />
 				    
 				        	<h:outputText value="Título Eleitoral: " />
-					        <p:inputText id="titulo" value="#{pessoaBean.candidato.titulo}" />
+					        <p:inputText id="titulo" value="#{pessoaBean.candidato.titulo}" label="Título"/>
 					        
 					        <br></br><br></br>				
 				            <h:outputText value="DADOS PARTIDÁRIOS" />
 				          
 					        <h:outputText value="Partido: " />
-		                    <p:inputText value="#{pessoaBean.candidato.partido}" required="true" label="partido"/>
+		                    <p:inputText value="#{pessoaBean.candidato.partido}" required="true" label="Partido"/>
 		 
 		                    <h:outputText value="Número: " />
-		                    <p:inputMask id="numero" value="#{pessoaBean.candidato.numero}" mask="99"/>
+		                    <p:inputMask id="numero" value="#{pessoaBean.candidato.numero}" mask="99" required="true" label="Número"/>
 
 					        <h:outputText value="Categoria: " />
-		                    <p:inputText value="#{pessoaBean.candidato.categoria}" required="true" label="categoria"/>
+		                    <p:inputText value="#{pessoaBean.candidato.categoria}" required="true" label="Categoria"/>
 		 
-						<p:dialog widgetVar="dlg" modal="true" resizable="false" header="Cadastrado com sucesso!" showEffect="fade">
-					    </p:dialog>
-					  <p:commandButton value="CADASTRAR CANDIDATO" action="${pessoaBean.cadastrarcandidato}" />
+					  <p:commandButton value="CADASTRAR CANDIDATO" action="${pessoaBean.cadastrarcandidato}"
+					  		actionListener="#{pessoaBean.exibirMsgCandidato}" />
 				</h:panelGrid>
             	</p:panel>
     			

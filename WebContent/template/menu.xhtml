@@ -12,7 +12,7 @@
 	<h:form>
     <p:growl autoUpdate="true"/>
  
-    <p:panelMenu style="width:200px">
+    <p:panelMenu style="width:221px">
         
         <p:submenu label="CADASTRAR">
             <p:menuitem value="Candidato" url="../UrnaEletronica/cadastroCandidato.xhtml" icon="ui-icon-user"/>
@@ -22,9 +22,9 @@
         
      </p:panelMenu>
      
-     <p:button style="width:200px" value="VOTAR"></p:button>
+     <p:button value="VOTAR" href="../UrnaEletronica/votar.xhtml" target='_self' style="width:221px; height:40px"></p:button>
      
-     <p:panelMenu style="width:200px">   
+     <p:panelMenu style="width:221px">   
         <p:submenu label="APURAR RESULTADOS" >
         	
         	<p:menuitem value="Votos de cada candidato" actionListener="#{menuView.save}" icon="ui-icon-extlink"/>

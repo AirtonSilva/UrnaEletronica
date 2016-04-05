@@ -35,26 +35,27 @@
 				            <p:inputText id="endereco" value="#{pessoaBean.eleitor.endereco}" required="true" label="Endereço" />
 				            
 					        <h:outputText for="cpf" value="CPF: " />
-					        <p:inputText id="cpf" value="#{pessoaBean.eleitor.cpf}" />
+					        <p:inputText id="cpf" value="#{pessoaBean.eleitor.cpf}" label="CPF"/>
 					   
 				            <h:outputText for="rg" value="Identidade:" />
 				            <p:inputText id="rg" value="#{pessoaBean.eleitor.rg}" required="true" label="Identidade" />
 				    
 				        	<h:outputText value="Título Eleitoral: " />
-					        <p:inputText id="titulo" value="#{pessoaBean.eleitor.titulo}" />
+					        <p:inputText id="titulo" value="#{pessoaBean.eleitor.titulo}" label="Título de Eleitor"/>
 					        
 					        <br></br><br></br>			
 		 
 						<p:dialog widgetVar="dlg" modal="true" resizable="false" header="Cadastrado com sucesso!" showEffect="fade">
 					    </p:dialog>
-					  <p:commandButton value="CADASTRAR ELEITOR" action="${pessoaBean.cadastrareleitor}" />
+					  <p:commandButton value="CADASTRAR ELEITOR" action="${pessoaBean.cadastrareleitor}" 
+					  		actionListener="#{pessoaBean.exibirMsgEleitor}" />
 				</h:panelGrid>
             	</p:panel>
     			
     			</h:form>
-    			
-    			<a href="../UrnaEletronica/index.xhtml" target='_self'>
-				Voltar</a>
+    			<br></br><br></br>
+					  		
+    			<a href="../UrnaEletronica/index.xhtml" target='_self'>Voltar</a>
        		</ui:define>
     		 
     	</ui:composition>

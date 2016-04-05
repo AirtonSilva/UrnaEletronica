@@ -1,14 +1,22 @@
 package br.edu.ifpb.bean;
 
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.context.RequestContext;
 
 import br.edu.ifpb.dao.CandidatoDAO;
 import br.edu.ifpb.dao.EleitorDAO;
+import br.edu.ifpb.dao.VotoDAO;
 import br.edu.ifpb.entidade.Candidato;
 import br.edu.ifpb.entidade.Eleitor;
+import br.edu.ifpb.entidade.Voto;
 
 @RequestScoped
 @ManagedBean
@@ -53,6 +61,33 @@ public class PessoaBean{
 		
 		return eleitor;
 				
+	}
+
+	public void exibirMsgCandidato() throws IOException {
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Êxito", "Candidato(a) cadastrado(a) com sucesso.");
+        RequestContext.getCurrentInstance().showMessageInDialog(message);
+        FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+    }
+	
+	public void exibirMsgEleitor() {
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Êxito", "Eleitor(a) cadastrado(a) com sucesso.");
+        RequestContext.getCurrentInstance().showMessageInDialog(message);
+        
+    }
+	
+	public void verificarTitulo() throws SQLException, IOException{
+		EleitorDAO eleitorDAO = new EleitorDAO();
+		Eleitor val_eleitor = eleitorDAO.getByTitulo(eleitor.getTitulo());
+		
+		VotoDAO votoDAO = new VotoDAO();
+		List<Voto> voto_aux = votoDAO.getByVoto(val_eleitor.getId());
+			
+		if((val_eleitor!=null)&&(voto_aux.size()==0)){
+			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("eleitor", val_eleitor);
+			FacesContext.getCurrentInstance().getExternalContext().redirect("votar.xhtml");
+		}else{
+			System.out.println("É nulo");
+		}
 	}
 
 }

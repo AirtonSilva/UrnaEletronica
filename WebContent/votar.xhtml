@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      >   <h:head>
+		<title>
+    		<ui:insert name="title" >
+			  Votar
+			</ui:insert>
+    	</title>
+    </h:head>  
+
+	<h:body>
+
+		<ui:composition template="/template/layout.xhtml">
+    	
+    		
+    		<ui:define name="telaUrna">
+    		
+    		Favor informar o seu título de eleitor: <br></br><br></br>
+    		
+    			<h:form>
+								
+					<p:inputMask value="#{pessoaBean.eleitor.titulo}" mask="9999.9999.9999"/> <br></br><br></br>
+					
+					<p:commandButton value="VOTAR" actionListener="#{pessoaBean.verificarTitulo}"  />
+				
+				</h:form> <br></br><br></br>
+					  		
+    			<a href="../UrnaEletronica/index.xhtml" target='_self'>Voltar</a>
+       		</ui:define>
+    		
+    	</ui:composition>
+    		   		
+		
+    </h:body>
+    		  
+</html>
