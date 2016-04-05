@@ -35,13 +35,13 @@
 				            <p:inputText id="endereco" value="#{pessoaBean.eleitor.endereco}" required="true" label="Endereço" />
 				            
 					        <h:outputText for="cpf" value="CPF: " />
-					        <p:inputText id="cpf" value="#{pessoaBean.eleitor.cpf}" label="CPF"/>
+					        <p:inputMask id="cpf" value="#{pessoaBean.eleitor.cpf}" required="true" mask="999.999.999-99" label="CPF"/>
 					   
 				            <h:outputText for="rg" value="Identidade:" />
 				            <p:inputText id="rg" value="#{pessoaBean.eleitor.rg}" required="true" label="Identidade" />
 				    
 				        	<h:outputText value="Título Eleitoral: " />
-					        <p:inputText id="titulo" value="#{pessoaBean.eleitor.titulo}" label="Título de Eleitor"/>
+					        <p:inputMask id="titulo" value="#{pessoaBean.eleitor.titulo}" required="true" mask="9999.9999.9999" label="Título de Eleitor"/>
 					        
 					        <br></br><br></br>			
 		 
